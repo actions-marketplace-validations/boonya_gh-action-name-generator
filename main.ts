@@ -10,8 +10,6 @@ const ConfigShape = z.object({
 });
 
 try {
-  console.log('core:', core);
-
   const config = ConfigShape.parse({
     separator: core.getInput('separator'),
     length: core.getInput('length'),

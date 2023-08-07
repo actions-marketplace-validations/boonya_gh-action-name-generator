@@ -6685,7 +6685,6 @@ const ConfigShape = zod_1.z.object({
     seed: zod_1.z.union([zod_1.z.string(), zod_1.z.number()]).optional(),
 });
 try {
-    console.log('core:', core);
     const config = ConfigShape.parse({
         separator: core.getInput('separator'),
         length: core.getInput('length'),
