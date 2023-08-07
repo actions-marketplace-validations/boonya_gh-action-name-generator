@@ -6,14 +6,12 @@ inputs:
       "A string separator to be used for separate the words generated.
       The default separator is set to `_`."
     required: false
-    default: "_"
   length:
     description:
       "The default value is set to 3 and it will return a name composed of 3 words.
       This values must be equal or minor to the number of dictionaries defined (3 by default).
       Setting the length to a value of 4 will throw an error when only 3 dictionaries are provided."
     required: false
-    default: "3"
   style:
     description:
       "The default value is set to lowerCase and it will return a lower case name.
@@ -21,7 +19,6 @@ inputs:
       The capital option will capitalize each word of the unique name generated.
       `lowerCase | upperCase | capital`."
     required: false
-    default: lowerCase
   seed:
     description:
       "A seed is used when wanting to deterministically generate a name.
@@ -33,5 +30,4 @@ outputs:
     description: "The generated random name output."
 runs:
   using: node16
-  main: index.mjs
-  pre: npm ci
+  main: dist/index.js
