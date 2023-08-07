@@ -6694,8 +6694,7 @@ try {
     console.log(`Options: ${JSON.stringify(config)}`);
     const output = (0, unique_names_generator_1.uniqueNamesGenerator)({ dictionaries: [unique_names_generator_1.adjectives, unique_names_generator_1.colors, unique_names_generator_1.animals, unique_names_generator_1.names], ...config });
     console.log(`Generated name: ${output}`);
-    core.setOutput('generated_name', output);
-    core.exportVariable('generated_name', output);
+    core.setOutput('name', output);
 }
 catch (error) {
     const message = (error instanceof Error)

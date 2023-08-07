@@ -23,8 +23,7 @@ try {
 
   console.log(`Generated name: ${output}`);
 
-  core.setOutput('generated_name', output);
-  core.exportVariable('generated_name', output);
+  core.setOutput('name', output);
 } catch (error) {
   const message = (error instanceof Error)
     ? error.message
