@@ -2,8 +2,23 @@
   "name": "gh-action-name-generator",
   "version": "1.0.0",
   "description": "This action creates a random name and outputs it to Github Actions environment variables. [unique-names-generator](https://github.com/andreasonny83/unique-names-generator) is used to generate the random names.",
-  "main": "index.mjs",
+  "homepage": "https://github.com/boonya/gh-action-name-generator#readme",
+  "repository": "https://github.com/boonya/gh-action-name-generator",
+  "keywords": [
+    "CI/CD",
+    "generator",
+    "utils"
+  ],
+  "author": "Tyler <TGPSKI> Pate",
+  "contributors": [
+    "Serhii <boonya> Buinytskyi"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/boonya/gh-action-name-generator/issues"
+  },
   "type": "module",
+  "main": "index.mjs",
   "engines": {
     "node": "~16.17.0",
     "npm": "~8.15.0"
@@ -12,18 +27,6 @@
     "start": "node index.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": "https://github.com/boonya/gh-action-name-generator",
-  "keywords": [
-    "CI/CD",
-    "generator",
-    "utils"
-  ],
-  "author": "Tyler [TGPSKI] Pate",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/TGPSKI/name-generator-node-action/issues"
-  },
-  "homepage": "https://github.com/TGPSKI/name-generator-node-action#readme",
   "dependencies": {
     "@actions/core": "^1.10.0",
     "unique-names-generator": "^4.7.1"
