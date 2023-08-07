@@ -34,3 +34,4 @@ outputs:
 runs:
   using: node16
   main: index.mjs
+  pre: npm ci
