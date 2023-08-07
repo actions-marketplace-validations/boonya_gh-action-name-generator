@@ -5,7 +5,7 @@ inputs:
     description: 'What separator to use'
     required: true
     default: '-'
-  length: 
+  length:
     description: 'How many words in the name'
     required: true
     default: '2'
@@ -17,5 +17,5 @@ outputs:
   name:
     description: 'The generated random name output.'
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: 'node16'
+  main: 'dist/index.mjs'
