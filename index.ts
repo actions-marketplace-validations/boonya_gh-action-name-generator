@@ -16,11 +16,18 @@ try {
       style: core.getInput('style'),
       seed: core.getInput('seed'),
     });
+
     console.log(`Options: ${JSON.stringify(config)}`);
+
     const output = uniqueNamesGenerator({dictionaries: [adjectives, colors, animals, names], ...config});
+
     console.log(`Generated name: ${output}`);
+
     core.setOutput('generated_name', output);
     core.exportVariable('generated_name', output);
 } catch (error) {
-    core.setFailed(error.message);
+  const message = (error instanceof Error)
+    ? error.message
+    : 'Something went wrong.';
+  core.setFailed(message);
 }
