@@ -6651,11 +6651,31 @@ exports.NEVER = parseUtil_1.INVALID;
 
 "use strict";
 
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const core_1 = __importDefault(__nccwpck_require__(186));
+const core = __importStar(__nccwpck_require__(186));
 const unique_names_generator_1 = __nccwpck_require__(839);
 const zod_1 = __nccwpck_require__(301);
 const ConfigShape = zod_1.z.object({
@@ -6665,24 +6685,24 @@ const ConfigShape = zod_1.z.object({
     seed: zod_1.z.union([zod_1.z.string(), zod_1.z.number()]).optional(),
 });
 try {
-    console.log('core:', core_1.default);
+    console.log('core:', core);
     const config = ConfigShape.parse({
-        separator: core_1.default.getInput('separator'),
-        length: core_1.default.getInput('length'),
-        style: core_1.default.getInput('style'),
-        seed: core_1.default.getInput('seed'),
+        separator: core.getInput('separator'),
+        length: core.getInput('length'),
+        style: core.getInput('style'),
+        seed: core.getInput('seed'),
     });
     console.log(`Options: ${JSON.stringify(config)}`);
     const output = (0, unique_names_generator_1.uniqueNamesGenerator)({ dictionaries: [unique_names_generator_1.adjectives, unique_names_generator_1.colors, unique_names_generator_1.animals, unique_names_generator_1.names], ...config });
     console.log(`Generated name: ${output}`);
-    core_1.default.setOutput('generated_name', output);
-    core_1.default.exportVariable('generated_name', output);
+    core.setOutput('generated_name', output);
+    core.exportVariable('generated_name', output);
 }
 catch (error) {
     const message = (error instanceof Error)
         ? error.message
         : 'Something went wrong.';
-    core_1.default.setFailed(message);
+    core.setFailed(message);
 }
 
 

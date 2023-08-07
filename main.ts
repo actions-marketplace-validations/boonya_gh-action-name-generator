@@ -1,4 +1,4 @@
-import core from '@actions/core';
+import * as core from '@actions/core';
 import { uniqueNamesGenerator, adjectives, colors, animals, names } from 'unique-names-generator';
 import {z} from 'zod';
 
