@@ -11,7 +11,7 @@ const ConfigShape = z.object({
 
 try {
   const config = ConfigShape.parse({
-    separator: core.getInput('separator'),
+    separator: core.getInput('separator', {trimWhitespace: false}),
     length: core.getInput('length'),
     style: core.getInput('style'),
     seed: core.getInput('seed'),
