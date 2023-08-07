@@ -10,21 +10,23 @@ const ConfigShape = z.object({
 });
 
 try {
-    const config = ConfigShape.parse({
-      separator: core.getInput('separator'),
-      length: core.getInput('length'),
-      style: core.getInput('style'),
-      seed: core.getInput('seed'),
-    });
+  console.log('core:', core);
 
-    console.log(`Options: ${JSON.stringify(config)}`);
+  const config = ConfigShape.parse({
+    separator: core.getInput('separator'),
+    length: core.getInput('length'),
+    style: core.getInput('style'),
+    seed: core.getInput('seed'),
+  });
 
-    const output = uniqueNamesGenerator({dictionaries: [adjectives, colors, animals, names], ...config});
+  console.log(`Options: ${JSON.stringify(config)}`);
 
-    console.log(`Generated name: ${output}`);
+  const output = uniqueNamesGenerator({dictionaries: [adjectives, colors, animals, names], ...config});
 
-    core.setOutput('generated_name', output);
-    core.exportVariable('generated_name', output);
+  console.log(`Generated name: ${output}`);
+
+  core.setOutput('generated_name', output);
+  core.exportVariable('generated_name', output);
 } catch (error) {
   const message = (error instanceof Error)
     ? error.message

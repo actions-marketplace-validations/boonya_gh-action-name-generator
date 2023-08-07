@@ -24,7 +24,7 @@
   },
   "scripts": {
     "start": "ts-node index.ts",
-    "build": "ncc -m -o lib build main.ts"
+    "build": "ncc build main.ts -t --license licenses.txt"
   },
   "dependencies": {
     "@actions/core": "^1.10.0",
