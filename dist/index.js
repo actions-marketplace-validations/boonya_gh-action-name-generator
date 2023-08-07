@@ -6680,7 +6680,7 @@ const unique_names_generator_1 = __nccwpck_require__(839);
 const zod_1 = __nccwpck_require__(301);
 const ConfigShape = zod_1.z.object({
     separator: zod_1.z.string().optional(),
-    length: zod_1.z.number().optional(),
+    length: zod_1.z.string().optional().transform((v) => Number(v) || undefined),
     style: zod_1.z.enum(['lowerCase', 'upperCase', 'capital']).optional(),
     seed: zod_1.z.union([zod_1.z.string(), zod_1.z.number()]).optional(),
 });

@@ -4,7 +4,7 @@ import {z} from 'zod';
 
 const ConfigShape = z.object({
   separator: z.string().optional(),
-  length: z.number().optional(),
+  length: z.string().optional().transform((v) => Number(v) || undefined),
   style: z.enum(['lowerCase', 'upperCase', 'capital']).optional(),
   seed: z.union([z.string(), z.number()]).optional(),
 });
